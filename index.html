@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movie App</title>
+  <link rel="stylesheet" href="./Css/all.min.css" />
+  <link rel="stylesheet" href="./Css/bootstrap.min.css" />
+  <link rel="stylesheet" href="./Css/style.css" />
+  <link rel="shortcut icon" href="./imgs/logo.png" type="image/x-icon" />
+</head>
+
+<body>
+  <div class="side-navbar h-100 position-fixed d-flex">
+    <div class="nav-items h-100 d-flex flex-column justify-content-between p-4">
+      <div class="nav-pages">
+        <ul class="list-unstyled overflow-hidden">
+          <li class="py-2 position-relative">Now Playing</li>
+          <li class="py-2 position-relative">Popular</li>
+          <li class="py-2 position-relative">Top Rated</li>
+          <li class="py-2 position-relative">Trending</li>
+          <li class="py-2 position-relative">Upcoming</li>
+          <li class="py-2 position-relative">Contact Us</li>
+        </ul>
+      </div>
+      <div class="nav-footer text-">
+        <div class="icons">
+          <i class="fa-brands fa-facebook px-1"></i>
+          <i class="fa-brands fa-twitter px-1"></i>
+          <i class="fa-solid fa-globe px-1"></i>
+        </div>
+        <div class="footer">
+          <p>Copyright © 2022 All Rights Reserved.</p>
+          <p>
+            Created by <span class="text-danger">Abdelrhman Abdelaziz</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="nav-header d-flex flex-column justify-content-between py-4 px-2 bg-white text-black align-items-center">
+      <img src="./imgs/logo.png" class="w-50" alt="Logo" />
+      <i class="fa-solid fa-align-justify fa-2x open-close"></i>
+      <div class="footer-icons">
+        <i class="fa-solid fa-globe d-block"></i>
+        <i class="fa-solid fa-share-nodes"></i>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="movie position-relative overflow-hidden">
+          <img src="https://image.tmdb.org/t/p/w500/4m1Au3YkjqsxF8iwQy0fPYSxE0h.jpg" class="w-100 animate" />
+          <div class="movie-layer position-absolute">
+            <h1 class="movie-title">Meg 2:TheTrench</h1>
+            <p>
+              An exploratory dive into the deepest depths of the ocean of a
+              daring research team spirals into chaos when a malevolent mining
+              operation threatens their mission and forces them into a
+              high-stakes battle for survival.
+            </p>
+            <p></p><span>Release Date<span class="fst-italic"> : 2023-08-02</span></span>
+            <p>
+            <h3 class="rate">
+              <i class="fa-solid fa-star text-warning fs-6"></i>
+                <i class="fa-solid fa-star text-warning fs-6"></i>
+                <i class="fa-solid fa-star text-warning fs-6"></i>  
+                <i
+                class="fa-regular fa-star-half-stroke text-warning fs-6"></i></h3>
+                <h3 class="rate vote d-flex justify-content-center align-items-center">7.0</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
