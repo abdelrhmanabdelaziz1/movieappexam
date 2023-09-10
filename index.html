@@ -1,182 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-    <title>Movie app</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="shortcut icon" href="images/react-1-282599.png" />
-   <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <!--                    Side Nav start                 -->
-    <nav>
-      <div class="nav-container position-relative">
-        <div id="hidden-nav">
-          <div class="nav-links">
-            <ul>
-              <li id="nowPlaying"><a href="#">Now playing</a></li>
-              <li id="popular"><a href="#">Popular</a></li>
-              <li id="topRated"><a href="#">Top Rated</a></li>
-              <li id="trending"><a href="#">Trending</a></li>
-              <li id="upcoming"><a href="#">Upcoming</a></li>
-              <li id="popular">
-                <a href="#contact-us">Contact Us</a>
-              </li>
-            </ul>
-          </div>
-          <div class="nav-footer pb-3">
-            <div class="py-3 px-3">
-              <i class="fab fa-facebook mx-1"></i>
-              <i class="fab fa-twitter-square mx-1"></i>
-              <i class="fas fa-globe mx-1"></i>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+    <title>Movie App </title>
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="loading" id="loader">
+        <span class="loader"></span>
+    </div>
+
+    <div class="side-nav-menu min-vh-100 position-fixed d-flex">
+        <div class="nav-tap d-flex flex-column justify-content-between p-4 min-vh-100">
+            <div class="nav-links">
+                <ul class="list-unstyled overflow-hidden">
+                    <li id="nowPlaying" class="py-2 position-relative"><a href="#">Now playing</a></li>
+                    <li id="popular" class="py-2 position-relative"><a href="#">Popular</a></li>
+                    <li id="topRated" class="py-2 position-relative"><a href="#">Top Rated</a></li>
+                    <li id="trending" class="py-2 position-relative"><a href="#">Trending</a></li>
+                    <li id="upcoming" class="py-2 position-relative"><a href="#">Upcoming</a></li>
+                    <li id="popular" class="py-2 position-relative">
+                        <a href="#contact">Contact Us</a>
+                    </li>
+                </ul>
+
             </div>
+            <div class="nav-footer">
+                <div class="footer-icons">
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+                <div class="footer-copy">
+                    <p> Copyright © 2022 All Rights <br> Reserved. <br> Created by <span class="text-danger"> Abdelrhman Abdelaziz</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-header d-flex flex-column justify-content-between text-center bg-white text-black py-2 px-2">
+            <img class="logo" src="./img/logo.png">
+            <i class="fa-solid fa-align-justify fa-2x open-close-icon"></i>
+            <!-- <i class="fa-solid fa-x"></i> -->
+
             <div>
-              <p class="text-secondary px-2">
-                Copyright Â© 2019 All Rights Reserved.
-                <span class="text-danger">By AbdelRhman Abdelaziz</span>
-              </p>
+                <i class="fa-solid fa-globe d-block"></i>
+                <i class="fa-solid fa-share-nodes"></i>
+
             </div>
-          </div>
         </div>
-        <aside
-          class="py-3 d-flex flex-column justify-content-between align-items-center text-center left"
-        >
-          <div class="aside-icon">
-            <img src="images/logo.png" class="w-50" alt="" />
-          </div>
+    </div>
 
-          <div class="aside-hamburger-icon">
-            <button id="hamburger-icon">
-              <i class="fas fa-bars fs-3"></i>
-            </button>
-            <button id="close-icon">
-              <i class="fas fa-times fs-3"></i>
-            </button>
-          </div>
-          <div
-            class="aside-links d-flex flex-column justify-content-between"
-          >
-            <i class="fas fa-globe my-2"></i>
-            <i class="fas fa-share-alt my-2"></i>
-          </div>
-        </aside>
-      </div>
-    </nav>
+    <div class="container">
+        <div class="row m-auto py-5">
+            <div class="col-md-12">
+                <input id="inputSearch" type="text"
+                    class=" form-control bg-transparent w-50 mx-auto rounded-pill text-white shadow-none border-white px-3"
+                    placeholder="Search movies..." />
 
-    <!--                    Side Nav End                 -->
+                    </div>
 
-    <!--                    Main section starts                 -->
+                    </div>
+            </div>
+   
 
-    <main class="pt-3 m-auto">
-      <div class="container">
-        <div class="search-bars pt-5">
-          <input
-            id="search-database"
-            type="text"
-            class="form-control text-danger border-2 border-bottom border-secondary"
-            placeholder="Search..."
-          />
-      
+    <div class="container">
+        <div class="row py-5 g-4" id="rowData">
+            
+            
         </div>
-        <div class="movies-container py-5">
-          <div class="row" id="moviesData"></div>
+    </div>
+
+
+    <div class="contact min-vh-100 d-flex justify-content-center align-items-center" id="contact">
+        <div class="container w-75 text-center">
+            <h1>Contact Us</h1>
+            <div class="row g-4 mt-3">
+                <div class="col-md-6">
+                    <input type="text" class="form-control required" id="userNameInput" placeholder="Enter Your Name">
+                    <p class="text-danger d-none" id="userNameAlert">Include at least 3 letters</p>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control required" id="userEmailInput" placeholder="Enter Your Email">
+                    <p class="text-danger d-none" id="userEmailAlert">Invalid Email, try example@domain.com</p>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control required" id="userPhoneInput" placeholder="Enter Your Phone">
+                    <p class="text-danger d-none" id="userPhoneAlert">Invalid Phone Number</p>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="form-control required" id="userAgeInput" placeholder="Enter Your Age">
+                    <p class="text-danger d-none" id="userAgeAlert">Your age must be over 16+</p>
+                </div>
+                <div class="col-md-6">
+                    <input type="password" class="form-control required" id="userPasswordInput"
+                        placeholder="Enter Your Password">
+                    <p class="text-danger d-none" id="userPasswordAlert">Password must contain numbers & letters and be
+                        at least 8 characters</p>
+                </div>
+                <div class="col-md-6">
+                    <input type="password" class="form-control required" id="userRePasswordInput"
+                        placeholder="Re-enter Password">
+                    <p class="text-danger d-none" id="userRePasswordAlert">Passwords do not match</p>
+                </div>
+            </div>
+            <button class="btn btn-outline-light mt-5 rounded-2 text-center"
+                onclick="validateContactForm()">Submit</button>
         </div>
-      </div>
-    </main>
+    </div>
 
-    <!--                    Main section End                 -->
 
-    <!--                    footer  start                 -->
 
-    <footer class="py-5" id="contact-us">
-      <div class="container">
-        <h2 class="text-white fw-lighter">Contact Us...</h2>
-        <div class="contact-us-forms row">
-          <div class="col-md-6 pt-2">
-            <input
-              id="name"
-              type="text"
-              class="form-control text-center border-2 border-bottom border-secondary"
-              placeholder="Enter Your Name"
-            />
-            <div id="name-error" class="text-center p-1">
-              <p>Enter a valid Name</p>
-            </div>
-          </div>
-          <div class="col-md-6 pt-2">
-            <input
-              id="email"
-              type="email"
-              class="form-control text-center border-2 border-bottom border-secondary"
-              placeholder="Enter Email"
-            />
-            <div id="email-error" class="text-center p-1">
-              <p>Enter a valid Email</p>
-            </div>
-          </div>
-          <div class="col-md-6 pt-2">
-            <input
-              id="phone"
-              type="text"
-              class="form-control text-center border-2 border-bottom border-secondary"
-              placeholder="Enter phone"
-            />
-            <div id="phone-error" class="text-center p-1">
-              <p>Enter a valid Egyptian phone</p>
-            </div>
-          </div>
-          <div class="col-md-6 pt-2">
-            <input
-              id="age"
-              type="text"
-              class="form-control text-center border-2 border-bottom border-secondary"
-              placeholder="Enter Age"
-            />
-            <div id="age-error" class="text-center p-1">
-              <p>Enter a valid age</p>
-            </div>
-          </div>
-          <div class="col-md-6 pt-2">
-            <input
-              id="password"
-              type="password"
-              class="form-control text-center border-2 border-bottom border-secondary"
-              placeholder="Enter Password"
-            />
-            <div id="password-error" class="text-center p-1">
-              <p>
-                enter valid password *Minimum eight characters, at
-                least one letter and one number no special characters
-                allowed*
-              </p>
-            </div>
-          </div>
-          <div class="col-md-6 pt-2">
-            <input
-              id="repassword"
-              type="password"
-              class="form-control text-center border-2 border-bottom border-secondary"
-              placeholder="Enter Password again"
-            />
-            <div id="repassword-error" class="text-center p-1">
-              <p>Passwords dont match</p>
-            </div>
-          </div>
-        </div>
-        <button class="btn btn-outline-danger my-3">Submit</button>
-      </div>
-    </footer>
 
-    <!--                    footer  End                 -->
+
     <script src="./js/jquery-3.6.0.min.js"></script>
-    <script src="./js/all.min.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="./js/main.js"></script>
-  </body>
+    <script src="./js/index.js"></script>
+
+
+
+</body>
+
 </html>
