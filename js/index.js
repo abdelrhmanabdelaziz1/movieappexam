@@ -241,7 +241,9 @@ function validateContactForm() {
   }
 
   
+  document.getElementById('submit').onclick=validateContactForm
 })
+
 
 
 
